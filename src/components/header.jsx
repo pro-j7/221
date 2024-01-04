@@ -1,55 +1,66 @@
-import React from 'react';
+import React, { Component } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import us from "../pages/main/subSection/us";
 
 const headerStyles = {
   topContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: '0 20px',
-    padding: '10px 0',
-    borderBottom: '1px solid rgb(141, 135, 135)',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: "0 20px",
+    padding: "10px 0",
+    borderBottom: "1px solid #e2e2e2",
+  },
+  menuIconbox: {
+    maxWidth: "20px",
   },
   icon: {
-    /* 아이콘 스타일링 */
+    width: "100%",
+  },
+  logoPngBox: {
+    maxWidth: "250px",
   },
   logo: {
-    maxWidth: '100px',
-    height: 'auto',
+    width: "100%",
+    height: "auto",
+  },
+  emptyBox: {
+    maxWidth: "20px",
   },
   empty: {
-    width: '100px',
-    height: 'auto',
+    width: "100%",
+    height: "auto",
   },
   container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: '15px 20px',
-    paddingBottom: '10px',
-    borderBottom: 'thick double #020d11',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: "15px 20px",
+    paddingBottom: "10px",
+    borderBottom: "thick double #020d11",
   },
   categories: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px',
-    backgroundColor: '#005587',
-    display: 'flex',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "10px",
+    backgroundColor: "#005587",
+    display: "flex",
   },
   headerLeftRight: {
-    color: 'rgb(199, 50, 50)',
-    cursor: 'pointer',
+    color: "rgb(199, 50, 50)",
+    cursor: "pointer",
   },
   category: {
-    padding: '8px',
-    color: 'rgb(218, 97, 97)',
-    cursor: 'pointer',
-    border: 'none',
-    borderRadius: '4px',
-    backgroundColor: '#005587',
+    padding: "8px",
+    color: "rgb(218, 97, 97)",
+    cursor: "pointer",
+    border: "none",
+    borderRadius: "4px",
+    backgroundColor: "#005587",
   },
   categoryHover: {
-    backgroundColor: '#003366',
+    backgroundColor: "#003366",
   },
 };
 
@@ -57,15 +68,21 @@ function Header() {
   return (
     <header>
       <div style={headerStyles.topContainer}>
-        <div style={headerStyles.icon}>Icon</div>
-        <img src="logo.png" alt="Logo" style={headerStyles.logo} />
-        <div style={headerStyles.empty}></div>
+        <div style={headerStyles.menuIconbox}>
+          <img src="menu.svg" alt="menu" style={headerStyles.icon} />
+        </div>
+        <div style={headerStyles.logoPngBox}>
+          <img src="logo.png" alt="Logo" style={headerStyles.logo} />
+        </div>
+        <div style={headerStyles.emptyBox}>
+          <div style={headerStyles.empty}></div>
+        </div>
       </div>
       <div style={headerStyles.container}>
         <div style={headerStyles.headerLeftRight}>Jan 01, 2024</div>
         <div style={headerStyles.categories}>
           <div style={headerStyles.category}>U.S.</div>
-          <div style={headerStyles.category}>World</div>
+          <div style={headerStyles.category}> World</div>
           <div style={headerStyles.category}>Business</div>
           <div style={headerStyles.category}>Arts</div>
           <div style={headerStyles.category}>Lifestyle</div>
