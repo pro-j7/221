@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import Header from "./components/header";
 import Login from "./pages/login/login";
 import Register from "./pages/login/register";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Modal from "./pages/myPage/modal";
 import AuthContext from "./context/AuthContext";
 
