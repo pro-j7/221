@@ -1,0 +1,74 @@
+.outer-container {
+  /*padding: 20px 150px 0 150px;*/
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.left-list,
+.right-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.left-list li a,
+.right-list li a,
+.button-container a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: normal;
+}
+
+.section-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  font-size: 0.625rem;
+}
+
+.section-list a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: normal;
+  margin-top: 20px;
+}
+
+.left-list li a:hover,
+.right-list li a:hover,
+.section-list a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.left-list li a,
+.right-list li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.left-list li {
+  margin-bottom: 7px;
+}
+
+.right-list li {
+  margin-bottom: 16px;
+}
+
+.logo-img {
+  max-width: 250px; /* Set the maximum width */
+  height: auto; /* Maintain aspect ratio */
+}

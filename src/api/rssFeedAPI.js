@@ -1,9 +1,8 @@
-//설명: 특정 섹션에 현재 게시된 기사 배열을 반환합니다.
-// topStoriesAPI.js
+//설명: 섹션 프론트에 등록된 기사를 반환합니다.
+// rssFeedAPI.js
 
-import apiClient from "./apiClient";
-// import axios from 'axios'; // axios import 추가
-
-export const getTopStories = (US) => {
-  return apiClient.get(`/topstories/v2/${US}.json`);
+// RSS 피드는 XML 형식이므로 일반적인 Axios 설정으로는 처리하기 어렵습니다.
+// 이 예시에서는 간단히 URL을 반환하는 함수를 만들었습니다.
+export const getRssFeedUrl = (section) => {
+  return `https://rss.nytimes.com/services/xml/rss/nyt/${section}.xml`;
 };

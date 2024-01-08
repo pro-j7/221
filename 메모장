@@ -1,0 +1,30 @@
+src/
+|-- api/
+|-- |--apiClient.js
+|-- |--archiveAPI.js
+|-- |--articleSearchAPI.js
+|-- |--mostPopularAPI.js
+|-- |--rssFeedAPI.js
+|-- |--timesNewswireAPI.js
+|-- |--topStoriesAPI.js
+|-- containers/
+|   |-- 버튼미정
+|   |-- 푸터미정
+|   |-- 헤더미정
+|-- context상태관리사용미정
+|-- pages/
+|   |-- login/
+|   |   |-- login.jsx
+|   |-- main/
+|   |   |--main.jsx
+|   |   |-- subSection/
+|   |    |-- US.js
+|   |    |-- World.js
+|   |    |-- Business.js
+|   |    |-- Arts.js
+|   |    |-- LifeStyle.js
+|   |-- MyPage/
+|   |   |-- MyPage.jsx
+|-- index.css
+|-- App.jsx
+|-- index.js
