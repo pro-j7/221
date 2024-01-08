@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./login.css";
 
 const User = {
   email: "soojin0869@gmail.com",

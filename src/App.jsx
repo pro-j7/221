@@ -23,7 +23,6 @@ function App() {
       ) : (
         <Register onFormSwitch={taggleForm} />
       )}
-      {/* <Modal /> */}
     </div>
   );
 }
