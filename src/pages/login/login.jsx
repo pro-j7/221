@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 const User = {
-  email: "test@example.com",
-  password: "test2323@@@",
+  email: "soojin0869@gmail.com",
+  password: "!tnwls0869",
 };
 
 const Login = (props) => {
@@ -37,9 +37,9 @@ const Login = (props) => {
 
   const onClickConfirmButton = () => {
     if (email === User.email && password === User.password) {
-      alert("로그인에 성공했습니다.");
+      alert("Success");
     } else {
-      alert("등록되지 않은 회원입니다.");
+      alert("Try Again");
     }
   };
 
@@ -88,7 +88,13 @@ const Login = (props) => {
             )}
           </div>
 
-          <button type="submit">Continue</button>
+          <button
+            onClick={onClickConfirmButton}
+            disabled={notAllow}
+            className="submitButton"
+          >
+            Continue
+          </button>
         </form>
         <div>
           <button

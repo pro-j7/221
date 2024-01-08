@@ -29,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 300px;
   padding: 0.25rem;
 }
 
@@ -49,6 +50,11 @@ button {
   border: none;
   padding: 10px;
   cursor: pointer;
+}
+
+.submitButton:disabled {
+  background-color: #dadada;
+  color: white;
 }
 
 .link-btn {
