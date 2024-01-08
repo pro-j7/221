@@ -1,36 +1,58 @@
 /* index.css */
 body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
-#root {
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-  color: #333;
-}
-
-ul {
-  list-style: none;
+.logo-img {
   padding: 0;
+  height: 10%;
+  border-bottom: solid black;
 }
 
-li {
-  margin-bottom: 10px;
+.login-text {
+  display: flex;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
+  font-weight: bold;
 }
 
-a {
-  text-decoration: none;
-  color: #007bff;
+.user-form-container,
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.25rem;
 }
 
-.story-image {
-  width: 30%;
-  height: 30%;
-  object-fit: cover;
+label {
+  text-align: left;
+  font-family: "Times New Roman", Times, serif;
+  padding: 0.25rem 0;
+}
+
+input {
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.link-btn {
+  background: none;
+  color: black;
+  text-decoration: underline;
 }

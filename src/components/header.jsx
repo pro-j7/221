@@ -1,55 +1,60 @@
-import React from 'react';
+import React from "react";
+import ReactDOM from "react-dom";
 
 const headerStyles = {
   topContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: '0 20px',
-    padding: '10px 0',
-    borderBottom: '1px solid rgb(141, 135, 135)',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    //margin: "0 20px",
+    //padding: "10px 0",
+    // borderBottom: "1px solid rgb(141, 135, 135)",
   },
-  icon: {
-    /* 아이콘 스타일링 */
-  },
+
   logo: {
-    maxWidth: '100px',
-    height: 'auto',
+    maxWidth: "300px",
+    height: "auto",
   },
+
   empty: {
-    width: '100px',
-    height: 'auto',
+    width: "100px",
+    height: "auto",
   },
+
   container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: '15px 20px',
-    paddingBottom: '10px',
-    borderBottom: 'thick double #020d11',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: "15px 20px",
+    paddingBottom: "10px",
+    borderBottom: "thick double #020d11",
   },
+
   categories: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px',
-    backgroundColor: '#005587',
-    display: 'flex',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "10px",
+    backgroundColor: "none",
+    display: "flex",
   },
+
   headerLeftRight: {
-    color: 'rgb(199, 50, 50)',
-    cursor: 'pointer',
+    color: "rgb(0, 0, 0)",
+    cursor: "pointer",
   },
+
   category: {
-    padding: '8px',
-    color: 'rgb(218, 97, 97)',
-    cursor: 'pointer',
-    border: 'none',
-    borderRadius: '4px',
-    backgroundColor: '#005587',
+    padding: "8px",
+    color: "rgb(0, 0, 0)",
+    cursor: "pointer",
+    border: "none",
+    borderRadius: "4px",
+    backgroundColor: "none",
   },
+
   categoryHover: {
-    backgroundColor: '#003366',
+    backgroundColor: "#003366",
   },
 };
 
@@ -57,8 +62,7 @@ function Header() {
   return (
     <header>
       <div style={headerStyles.topContainer}>
-        <div style={headerStyles.icon}>Icon</div>
-        <img src="logo.png" alt="Logo" style={headerStyles.logo} />
+        <img src="NYTimesLogo.png" alt="Logo" style={headerStyles.logo} />
         <div style={headerStyles.empty}></div>
       </div>
       <div style={headerStyles.container}>
@@ -77,28 +81,157 @@ function Header() {
 }
 
 export default Header;
-/////////////////////////////////////////////////
-// //
-// 사용 예시
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import Header from './Header'; // 프로젝트 구조에 맞게 경로를 조정하십시오
 
-// function App() {
-//   // 나머지 애플리케이션 컴포넌트와 로직을 이곳에 정의합니다.
-//   // App 컴포넌트 내에서 다른 컴포넌트를 포함시킬 수 있습니다.
+// import React, { useState, useEffect, useReducer, useContext } from "react";
+
+// import Card from "../UI/Card/Card";
+// import classes from "./Login.module.css";
+// import Button from "../UI/Button/Button";
+// import AuthContext from "../../context/AuthContext";
+
+// const emailReducer = (state, action) => {
+//   // 값이 바뀌는 경우. setEnteredEail
+//   if (action.type === "USER_INPUT") {
+//     return {
+//       value: action.val,
+//       isValid: action.val.includes("@"),
+//     };
+//   }
+//   // 유효성 검사를 해야하는 경우. setEmailIsValid
+//   if (action.type === "INPUT_BLUR") {
+//     return {
+//       value: state.value,
+//       isvalid: state.value.includes("@"),
+//     };
+//   }
+//   return {
+//     value: "",
+//     isValid: null,
+//   };
+// };
+
+// const passwordReducer = (state, action) => {
+//   // 값이 바뀌는 경우. setEnteredPassword
+//   if (action.type === "USER_INPUT") {
+//     return {
+//       value: action.val,
+//       isValid: action.val.trim().length > 6,
+//     };
+//   }
+//   // 유효성 검사를 해야하는 경우. setPasswordIsValid
+//   if (action.type === "INPUT_BLUR") {
+//     return {
+//       value: state.value,
+//       isvalid: state.value.trim().length > 6,
+//     };
+//   }
+//   return {
+//     value: "",
+//     isValid: null,
+//   };
+// };
+
+// const Login = () => {
+//   const context = useContext(AuthContext);
+
+//   // const [enteredEmail, setEnteredEmail] = useState("");
+//   // const [emailIsValid, setEmailIsValid] = useState();
+//   // const [enteredPassword, setEnteredPassword] = useState("");
+//   // const [passwordIsValid, setPasswordIsValid] = useState();
+//   const [formIsValid, setFormIsValid] = useState(false);
+//   const [emailState, dispatchEmail] = useReducer(emailReducer, {
+//     value: "",
+//     isValid: null,
+//   });
+//   const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
+//     value: "",
+//     isValid: null,
+//   });
+
+//   useEffect(() => {
+//     console.log("EFFECT RUNNING");
+
+//     return () => {
+//       console.log("EFFECT CLEANUP");
+//     };
+//   }, []);
+
+//   // identifier가 끝나고 기억하고 있다가 다른 이벤트가 실행되지 않으면 유지,
+//   // 새로운 이벤트가 생기면 useEffect가 실행되면 그 전꺼에 덮어쓰기가 된다
+//   // useEffect(() => {
+//   //   const identifier = setTimeout(() => {
+//   //     setFormIsValid(
+//   //       enteredEmail.includes("@") && enteredPassword.trim().length > 6
+//   //     );
+//   //   }, 500);
+//   //   return () => {
+//   //     clearTimeout(identifier);
+//   //   };
+//   // }, [enteredEmail, enteredPassword]);
+
+//   const emailChangeHandler = (event) => {
+//     dispatchEmail({ type: "USER_INPUT", val: event.target.value });
+
+//     setFormIsValid(emailState.isValid && passwordState.isValid);
+//   };
+
+//   const passwordChangeHandler = (event) => {
+//     dispatchPassword({ type: "USER_INPUT", val: event.target.value });
+//     setFormIsValid(emailState.isValid && passwordState.isValid);
+//   };
+
+//   const validateEmailHandler = () => {
+//     dispatchEmail({ type: "INPUT_BLUR" });
+//   };
+
+//   const validatePasswordHandler = () => {
+//     dispatchPassword({ type: "INPUT_BLUR" });
+//   };
+
+//   const submitHandler = (event) => {
+//     event.preventDefault();
+//     context.onLogin(emailState.value, passwordState.value);
+//   };
+
 //   return (
-//     <div>
-//       <Header />
-//       {/* 다른 컴포넌트를 이곳에서 렌더링합니다. */}
-//     </div>
+//     <Card className={classes.login}>
+//       <form onSubmit={submitHandler}>
+//         <div
+//           className={`${classes.control} ${
+//             emailState.isValid === false ? classes.invalid : ""
+//           }`}
+//         >
+//           <label htmlFor="email">이메일</label>
+//           <input
+//             type="email"
+//             id="email"
+//             value={emailState.value}
+//             onChange={emailChangeHandler}
+//             onBlur={validateEmailHandler}
+//           />
+//         </div>
+//         <div
+//           className={`${classes.control} ${
+//             passwordState.isValid === false ? classes.invalid : ""
+//           }`}
+//         >
+//           <label htmlFor="password">비밀번호</label>
+//           <input
+//             type="password"
+//             id="password"
+//             value={passwordState.value}
+//             onChange={passwordChangeHandler}
+//             onBlur={validatePasswordHandler}
+//           />
+//         </div>
+//         <div className={classes.actions}>
+//           <Button type="submit" className={classes.btn} disabled={!formIsValid}>
+//             로그인
+//           </Button>
+//         </div>
+//       </form>
+//     </Card>
 //   );
-// }
+// };
 
-// // root 요소 내에서 App 컴포넌트를 렌더링합니다.
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+// export default Login;
