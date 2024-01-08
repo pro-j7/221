@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import "./login.css";
 
@@ -111,3 +112,16 @@ const Login = (props) => {
 };
 
 export default Login;
+=======
+import React from "react";
+
+function login(props) {
+  return (
+    <>
+      <h1>Login 입니다</h1>
+    </>
+  );
+}
+
+export default login;
+>>>>>>> test
