@@ -4,7 +4,7 @@ import { searchArticles } from '../../../api/articleSearchAPI';
 import Header from '../../../components/header/header';
 import { FaSearch } from 'react-icons/fa';
 
-function Us() {
+function World() {
   const [allStories, setAllStories] = useState([]);
   const [firstDivStories, setFirstDivStories] = useState([]);
   const [secondDivStories, setSecondDivStories] = useState([]);
@@ -36,12 +36,12 @@ function Us() {
   };
 
   useEffect(() => {
-    getTopStories('us')
+    getTopStories('world')
       .then((response) => {
         const allData = response.data.results;
         setAllStories(allData);
 
-        const firstDivCount = 6;
+        const firstDivCount = 9;
         const firstDivData = allData.slice(0, firstDivCount);
         setFirstDivStories(firstDivData);
 
@@ -82,7 +82,7 @@ function Us() {
           fontFamily: "'WarhavenB', sans-serif",
         }}
       >
-        U.S. News
+        World News
       </div>
       <div
         style={{
@@ -95,7 +95,7 @@ function Us() {
       >
         <span>
           <a
-            href="https://www.nytimes.com/interactive/2022/us/fire-tracker-maps.html"
+            href="https://www.nytimes.com/section/world/africa"
             style={
               hoveredLinks.link1
                 ? { ...linkStyle, ...linkHoverStyle }
@@ -116,14 +116,14 @@ function Us() {
               })
             }
           >
-            Wildfire and Air Quality Tracker
+            AFRICA
           </a>{' '}
           {'|'}
         </span>
         <span>
           {' '}
           <a
-            href="https://www.nytimes.com/column/california-today"
+            href="https://www.nytimes.com/section/world/americas"
             style={
               hoveredLinks.link2
                 ? { ...linkStyle, ...linkHoverStyle }
@@ -144,14 +144,14 @@ function Us() {
               })
             }
           >
-            California Today
+            AMERICAS
           </a>{' '}
           {'|'}
         </span>
         <span>
           {' '}
           <a
-            href="https://www.nytimes.com/spotlight/race"
+            href="https://www.nytimes.com/section/world/asia"
             style={
               hoveredLinks.link3
                 ? { ...linkStyle, ...linkHoverStyle }
@@ -172,7 +172,7 @@ function Us() {
               })
             }
           >
-            Race/Related
+            ASIA
           </a>
         </span>
       </div>
@@ -472,4 +472,4 @@ function Us() {
   );
 }
 
-export default Us;
+export default World;
