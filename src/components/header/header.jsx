@@ -161,8 +161,6 @@ function Header() {
               Arts
             </NavLink>
           </div>
-
-          <div style={headerStyles.category}>Lifestyle </div>
         </div>
         <div style={headerStyles.LoginIconBox}>
           <NavLink to="/main/Login">
