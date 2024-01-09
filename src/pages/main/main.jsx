@@ -1,52 +1,61 @@
-// Main.jsx
-
-import React, { useState, useEffect } from "react";
-import { getTopStories } from "../../api/topStoriesAPI";
-import Header from "../../components/header/header";
-import Footer from "../../components/footer/footer";
+import React, { useState, useEffect } from 'react';
+import { getTopStories } from '../../api/topStoriesAPI';
+import { getLatestArticles } from '../../api/timesNewswireAPI'; // 추가된 임포트
+import Header from '../../components/header/header';
+import Footer from '../../components/footer/footer';
 
 const Main = () => {
-  const [stories, setStories] = useState([]);
+  const [leftSectionStories, setLeftSectionStories] = useState([]);
+  const [rightSectionStories, setRightSectionStories] = useState([]); // 오른쪽 섹션 상태
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
-    getTopStories("home")
+    getTopStories('home')
       .then((response) => {
-        setStories(response.data.results);
-        setIsLoading(false);
+        setLeftSectionStories(response.data.results);
       })
       .catch((error) => {
-        console.error("Failed to fetch top stories: ", error);
+        console.error('Failed to fetch top stories: ', error);
         setError(error);
+      });
+
+    getLatestArticles()
+      .then((response) => {
+        setRightSectionStories(response.data.results);
+      })
+      .catch((error) => {
+        console.error('Failed to fetch latest articles: ', error);
+        setError(error);
+      })
+      .finally(() => {
         setIsLoading(false);
       });
-  }, []); // 의존성 배열 필요에 따라 수정
+  }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error loading top stories.</div>;
+    return <div>Error loading stories.</div>;
   }
 
   return (
     <div>
       <Header />
-      {/* <h1>Top Stories</h1> */}
       <div className="nyt-container">
         <section className="nyt-section-1">
           <ul>
-            {stories.map((story) => (
+            {leftSectionStories.map((story) => (
               <li key={story.url} className="nyt-firstsection-li">
                 {/* 가정: story.multimedia[0].url에 이미지가 저장된 위치라고 가정 */}
                 {story.multimedia && story.multimedia.length > 0 && (
                   <div
                     style={{
-                      width: "60%",
-                      minHeight: "250px",
+                      width: '60%',
+                      minHeight: '250px',
                     }}
                   >
                     <img
@@ -54,15 +63,15 @@ const Main = () => {
                       src={story.multimedia[0].url}
                       alt={story.title}
                       style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
                       }}
                     />
                   </div>
                 )}
                 <div
-                  style={{ width: "40%", height: "auto", paddingRight: "1rem" }}
+                  style={{ width: '40%', height: 'auto', paddingRight: '1rem' }}
                 >
                   <a
                     className="nyt-firstsection-title"
@@ -79,7 +88,7 @@ const Main = () => {
         </section>
         <section className="nyt-section-2">
           <ul>
-            {stories.map((story) => (
+            {rightSectionStories.map((story) => (
               <li key={story.url} className="nyt-secondsection-li">
                 {/* 가정: story.multimedia[0].url에 이미지가 저장된 위치라고 가정 */}
                 {story.multimedia && story.multimedia.length > 0 && (
@@ -87,7 +96,11 @@ const Main = () => {
                     className="story-image"
                     src={story.multimedia[0].url}
                     alt={story.title}
-                    style={{ marginLeft: "20px" }}
+                    style={{
+                      marginLeft: '20px',
+                      width: '100px', // Specify the desired width
+                      height: '100px',
+                    }}
                   />
                 )}
                 <a

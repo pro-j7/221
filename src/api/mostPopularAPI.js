@@ -1,6 +1,3 @@
-//설명: NYTimes.com의 이메일, 공유 또는 조회수를 기반으로 가장 인기 있는 기사를 제공합니다.
-// mostPopularAPI.js
-
 import apiClient from './apiClient';
 
 export const getMostEmailedArticles = (period) => {

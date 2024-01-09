@@ -1,5 +1,3 @@
-/* index.css */
-
 :root {
   --color-background-color: #f8f8f8;
   --color-news-article-color: #121212;
@@ -8,10 +6,10 @@
 }
 
 @font-face {
-  font-family: "Lora", "Nanum Myeongjo", serif;
+  font-family: 'Lora', 'Nanum Myeongjo', serif;
   font-weight: normal;
-  src: url(./fonts/Lora-VariableFont_wght.ttf) format("truetype");
-  src: url(./fonts/NanumMyeongjo-Regular.ttf) format("truetype");
+  src: url(./fonts/Lora-VariableFont_wght.ttf) format('truetype');
+  src: url(./fonts/NanumMyeongjo-Regular.ttf) format('truetype');
 }
 
 body {
@@ -62,7 +60,7 @@ ul li:last-child {
 a {
   text-decoration: none;
   color: var(--color-news-title-color);
-  font-family: "Lora", serif;
+  font-family: 'Lora', serif;
   font-weight: bold;
 }
 

@@ -1,0 +1,70 @@
+body {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.logo-img {
+  padding: 0;
+  height: 10%;
+  border-bottom: solid black;
+}
+
+.login-text {
+  display: flex;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: bold;
+}
+
+.user-form-container,
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  padding: 0.25rem;
+}
+
+label {
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 0.25rem 0;
+}
+
+input {
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  background-color: #dadada;
+  color: white;
+}
+
+.link-btn {
+  background: none;
+  color: black;
+  text-decoration: underline;
+}
+
+.errorMessage {
+  text-align: left;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: small;
+  color: red;
+}
