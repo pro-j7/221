@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './login.css';
+import { useNavigate } from 'react-router-dom';
 
 const User = {
   email: 'soojin0869@gmail.com',
@@ -24,6 +25,7 @@ const Login = (props) => {
       setEmailValid(false);
     }
   };
+  const navigate = useNavigate();
 
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -39,6 +41,7 @@ const Login = (props) => {
   const onClickConfirmButton = () => {
     if (email === User.email && password === User.password) {
       alert('Success');
+      navigate('/main');
     } else {
       alert('Try Again');
     }
